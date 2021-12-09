@@ -1,0 +1,52 @@
+<mvc:View controllerName="com.nttdata.ExcelJs.controller.View" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<Table id="idRequestTable" inset="false" items="{ path: 'mock>/requests' }" class="sapUiResponsiveContentPadding">
+							<headerToolbar>
+								<OverflowToolbar>
+									<content>
+										<Title text="Requests" level="H2"/>
+										<ToolbarSpacer/>
+										<Button text="Export SheetJs" press="onExportSheetJs"/>
+										<Button text="Export ExcelJs" press="onExportExcelJs"/>
+									</content>
+								</OverflowToolbar>
+							</headerToolbar>
+							<columns>
+								<Column>
+									<Text text="Request"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="Material"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="Date"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="Price"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="Currency"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<ObjectIdentifier title="{mock>inputPRAmount}"/>
+										<Text text="{mock>inputMaterialNumber}"/>
+										<Text text="{mock>inputDeliveryDate}"/>
+										<Text text="{mock>inputUnit}"/>
+										<Text text="{mock>inputPrice}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
